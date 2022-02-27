@@ -15,7 +15,7 @@ Include the sentiment.js in your HTML file, and run Sent.loadModels() to load th
 This method can be used to classify the emotion of the face in image. It takes in ‘image’, which can be an [HTML5 image](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) or an [HTML5 video](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video). Verbose is an optional input which controls the format of the output. By default, verbose is false and the classifier returns a string (‘happy’, ‘sad’, ‘angry’, etc.) which is the primary emotion identified. If verbose is true, the output is an object with the likelihood of each of 7 emotions being present:
 
 ```js
-	{
+{
     angry: 0.00010794925037771463
     disgusted: 0.000025764044039533474
     fearful: 0.00003148596078972332
@@ -23,7 +23,7 @@ This method can be used to classify the emotion of the face in image. It takes i
     neutral: 0.02727043442428112
     sad: 0.0027909078635275364
     surprised: 0.000625754299107939
-	}
+}
 ```
 If no face is detected, the function will return null.
 
@@ -34,7 +34,7 @@ Example usage:
 static async exampleFunction () {
   // load in the models before attempting to classify
   Sent.loadModels()
-  
+
   const video = Document.getElementById('hypotheticalVideoID')
  
   // for the non-verbose version
