@@ -47452,25 +47452,22 @@ const faceapi = require('face-api.js')
 const sentimoodLib = require('./sentimood.js')
 
 class Sent {
-  // test
-  static hi () {
-    const sentimood = new sentimoodLib();
-    console.log(sentimood.analyze('you are stupid'))
-  }
-
   static async loadModels () {
     // load the ml models
-    console.log('loading models...')
     this._PATH_TO_MODELS = './src/models'
     this._modelsLoaded = true
-    //await faceapi.nets.faceExpressionNet.loadFromDisk(this._PATH_TO_MODELS)
     await faceapi.loadFaceExpressionModel(this._PATH_TO_MODELS)
     await faceapi.loadSsdMobilenetv1Model(this._PATH_TO_MODELS)
-
-    
+    this.text = new sentimoodLib()
   }
 
-  static textPredict () {}
+  static textPredict (text, verbose = false) {
+    const res = this.text.analyze(text)
+    if (verbose) {
+      return res
+    }
+    return res.score
+  }
 
   static async readFacialExpression (img, verbose = false) {
     // read the facial expression of input
@@ -50004,8 +50001,8 @@ module.exports = (function() {
       }
     }
     return {
-      score: hits,
-      comparative: hits / words.length,
+      score: (hits / Math.max(1, words.length)) / 5,
+      // comparative: hits / words.length,
       words: words
     };
   };
@@ -50029,8 +50026,8 @@ module.exports = (function() {
       }
     }
     return {
-      score: hits,
-      comparative: hits / words.length,
+      score: (hits / Math.max(1, words.length)) / 5,
+      // comparative: hits / words.length,
       words: words
     };
   };
@@ -50041,7 +50038,7 @@ module.exports = (function() {
     neg = Sentimood.prototype.negativity(phrase);
     return {
       score: pos.score - neg.score,
-      comparative: pos.comparative - neg.comparative,
+      // comparative: pos.comparative - neg.comparative,
       positive: pos,
       negative: neg
     };

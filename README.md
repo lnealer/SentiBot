@@ -6,7 +6,7 @@ Sent (or `sentiment.js`) is a JavaScript library for evaluating the mood or sent
 
 Copy the model files in src/models into your project. You'll need to load them in before classifying. 
 
-Include the sentiment.js in your HTML file, and run Sent.loadModels() to load the machine learning models for the library. Set the path to the models, stored in Sent._PATH_TO_MODELS, to the correct path. By default, the path is './src/models'.
+Include the sentiment.js in your HTML file, and run Sent.loadModels() once to load the machine learning models for the library. Set the path to the models, stored in Sent._PATH_TO_MODELS, to the correct path. By default, the path is './src/models'
 
 ## API
 
@@ -46,4 +46,25 @@ static async exampleFunction () {
   const angryProbability = emotionProbabilities.angry
   // out: angryProbability = 0.5
 }
+```
+
+#### `textPredict (text, [verbose])`
+This method can be used to score the sentiment of the given text with a value between -1 ("negative") and 1 ("positive"). Verbose is an optional input which controls the format of the output. By default, verbose is false and the model only returns the score. When verbose is true, the output is an object with score and a breakdown of its positive and negative components. In each component, there is the positive (or negative) score contribution and the list of positve (or negative) words contributing.
+
+Example usage:
+```js
+Sent.textPredict('I hate your guts, but I love you', verbose=true)
+
+Out:
+  {
+    score: 0,
+    negative: {
+      score: 0.6,
+      words: ['hate']
+    },
+    positive: {
+      score: 0.6,
+      words: ['love']
+    }
+  }
 ```
