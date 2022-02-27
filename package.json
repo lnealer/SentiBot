@@ -1,0 +1,26 @@
+{
+  "name": "sentiment",
+  "version": "1.0.0",
+  "description": "library to classify media sentiments",
+  "main": "main.html",
+  "scripts": {
+    "build": "browserify ./src/sentiment.js > sentiment.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lnealer/Sentiment.git"
+  },
+  "author": "Leandra Nealer <lnealer@uchicago.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lnealer/Sentiment/issues"
+  },
+  "homepage": "https://github.com/lnealer/Sentiment#readme",
+  "dependencies": {
+    "face-api.js": "^0.22.2"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  }
+}
