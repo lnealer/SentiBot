@@ -2494,8 +2494,8 @@ module.exports = (function() {
       }
     }
     return {
-      score: hits,
-      comparative: hits / words.length,
+      score: (hits / Math.max(1, words.length)) / 5,
+      // comparative: hits / words.length,
       words: words
     };
   };
@@ -2519,8 +2519,8 @@ module.exports = (function() {
       }
     }
     return {
-      score: hits,
-      comparative: hits / words.length,
+      score: (hits / Math.max(1, words.length)) / 5,
+      // comparative: hits / words.length,
       words: words
     };
   };
@@ -2531,7 +2531,7 @@ module.exports = (function() {
     neg = Sentimood.prototype.negativity(phrase);
     return {
       score: pos.score - neg.score,
-      comparative: pos.comparative - neg.comparative,
+      // comparative: pos.comparative - neg.comparative,
       positive: pos,
       negative: neg
     };
