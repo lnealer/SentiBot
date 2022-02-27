@@ -6,7 +6,7 @@ Sent (or `sentiment.js`) is a JavaScript library for evaluating the mood or sent
 
 Copy the model files in src/models into your project. You'll need to load them in before classifying. 
 
-Include the sentiment.js in your HTML file, and run Sent.loadModels() to load the machine learning models for the library. Set the path to the models, stored in Sent._PATH_TO_MODELS, to the correct path. By default, the path is './src/models'
+Include the sentiment.js in your HTML file, and run Sent.loadModels() to load the machine learning models for the library. Set the path to the models, stored in Sent._PATH_TO_MODELS, to the correct path. By default, the path is './src/models'.
 
 ## API
 
