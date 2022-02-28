@@ -5,6 +5,7 @@
   "main": "main.html",
   "scripts": {
     "build": "browserify ./src/sentiment.js > sentiment.js",
+		"post-build": "terser sentiment.js -c -o sentiment.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,8 @@
   },
   "homepage": "https://github.com/lnealer/Sentiment#readme",
   "dependencies": {
-    "face-api.js": "^0.22.2"
+    "face-api.js": "^0.22.2",
+    "terser": "^5.11.0"
   },
   "devDependencies": {
     "browserify": "^17.0.0"
