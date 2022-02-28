@@ -1,23 +1,23 @@
 {
-  "name": "sentiment",
+  "name": "sentibot",
   "version": "1.0.0",
   "description": "library to classify media sentiments",
   "main": "main.html",
   "scripts": {
-    "build": "browserify ./src/sentiment.js > sentiment.js",
-		"post-build": "terser sentiment.js -c -o sentiment.min.js",
+    "build": "browserify ./src/sentibot.js > sentibot.js",
+    "post-build": "terser sentibot.js -c -o sentibot.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lnealer/Sentiment.git"
+    "url": "git+https://github.com/lnealer/Sentibot.git"
   },
   "author": "Leandra Nealer <lnealer@uchicago.edu>, Ethan Croitoru <ecroitoru@uchicago.edu, Mati Yang <matildey@uchicago.edu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lnealer/Sentiment/issues"
+    "url": "https://github.com/lnealer/Sentibot/issues"
   },
-  "homepage": "https://github.com/lnealer/Sentiment#readme",
+  "homepage": "https://github.com/lnealer/Sentibot#readme",
   "dependencies": {
     "face-api.js": "^0.22.2",
     "terser": "^5.11.0"

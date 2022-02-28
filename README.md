@@ -1,12 +1,12 @@
-# Sentiment
+# SentiBot
 
-Sent (or `sentiment.js`) is a JavaScript library for evaluating the mood or sentiment of media in the browser. It consists of a set of methods (documented below) which accept inputs of different media and return the sentiment. 
+Sent (or `sentibot.js`) is a JavaScript library for evaluating the mood or sentiment of media in the browser. It consists of a set of methods (documented below) which accept inputs of different media and return the sentiment. 
 
 ## getting started
 
 Copy the model files in src/models into your project. You'll need to load them in before classifying. 
 
-Include the sentiment.js in your HTML file, and run Sent.loadModels() once to load the machine learning models for the library. Set the path to the models, stored in Sent._PATH_TO_MODELS, to the correct path. By default, the path is './src/models'
+Include the sentibot.js in your HTML file, and run Sent.loadModels() once to load the machine learning models for the library. Set the path to the models, stored in Sent._PATH_TO_MODELS, to the correct path. By default, the path is './src/models'
 
 ## API
 
