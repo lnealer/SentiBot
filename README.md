@@ -53,7 +53,7 @@ This method can be used to score the sentiment of the given text with a value be
 
 Example usage:
 ```js
-Sent.textPredict('I hate your guts, but I love you', verbose=true)
+Sent.textPredict('I hate your guts, but I love you', true)
 
 Out:
   {
