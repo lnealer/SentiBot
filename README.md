@@ -10,6 +10,12 @@ Include the sentiment.js in your HTML file, and run Sent.loadModels() once to lo
 
 ## API
 
+#### `loadModels ([path])`
+
+This method loads the necessary models for sentiment classification. path is an option input which contains the file path to the model repository. By default, it is './src/models'.
+
+This method should be run before your project attempts to run any of the other methods.
+
 #### `readFacialExpression (image, [verbose])`
 
 This method can be used to classify the emotion of the face in image. It takes in ‘image’, which can be an [HTML5 image](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) or an [HTML5 video](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video). Verbose is an optional input which controls the format of the output. By default, verbose is false and the classifier returns a string (‘happy’, ‘sad’, ‘angry’, etc.) which is the primary emotion identified. If verbose is true, the output is an object with the likelihood of each of 7 emotions being present:

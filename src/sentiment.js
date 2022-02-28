@@ -2,12 +2,11 @@ const faceapi = require('face-api.js')
 const sentimoodLib = require('./sentimood.js')
 
 class Sent {
-  static async loadModels () {
+  static async loadModels (path='./src/models') {
     // load the ml models
-    this._PATH_TO_MODELS = './src/models'
-    this._modelsLoaded = true
-    await faceapi.loadFaceExpressionModel(this._PATH_TO_MODELS)
-    await faceapi.loadSsdMobilenetv1Model(this._PATH_TO_MODELS)
+    this.modelsLoaded = true
+    await faceapi.loadFaceExpressionModel(path)
+    await faceapi.loadSsdMobilenetv1Model(path)
     this.text = new sentimoodLib()
   }
 
