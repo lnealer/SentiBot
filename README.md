@@ -1,5 +1,5 @@
-# SentiBot &#x1F916; &#x1F493;
-
+# SentiBot &#x1F493; &#x1F916;
+ 
 Sent (or `sentibot.js`) is a JavaScript library for evaluating the mood or sentiment of media in the browser. It consists of a set of methods (documented below) which accept inputs of different media and return the sentiment. 
 
 ## getting started
