@@ -37,12 +37,17 @@ class Sent {
 
     // detect expression
     const output = await faceapi.detectSingleFace(img).withFaceExpressions()
-    const expressions = output.expressions
-    if (verbose) {
-      // return full object
-      return expressions
+    if (output != null){
+      const expressions = output.expressions
+      if (verbose) {
+        // return full object
+        return expressions
+      }
+      return extractPrimaryEmotion(expressions)
     }
-    return extractPrimaryEmotion(expressions)
+    else {
+      return null
+    }
   }
 
   static getMood () {}
